@@ -1,0 +1,12 @@
+import NewBillComponent from "@/app/newBill/page";
+// import SideBar from "@/app/sidebar/page";
+import SideBar from "@/app/component/sidebar/sidebar";
+
+export default function NewBill() {
+  return (
+    <div className="flex">
+      {/* <SideBar /> */}
+      <NewBillComponent />
+    </div>
+  );
+}

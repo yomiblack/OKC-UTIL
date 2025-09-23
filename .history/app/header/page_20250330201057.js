@@ -1,0 +1,55 @@
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "@/public/login/OKC_LOGO.png";
+import { usePathname } from "next/navigation";
+
+export default function Header() {
+  const pathname = usePathname();
+  const isLandingPage = pathname === "/";
+
+  function LinkHover(label, route) {
+    const pathname = usePathname();
+
+    let activeClass = "text-stone-500 hover:text-orange-500 hover:shadow-sm";
+
+    if (pathname.startsWith(route))
+      activeClass = "text-orange-700 hover:text-orange-500 hover:shadow-sm";
+
+    if (route === "/")
+      activeClass = "text-stone-500 hover:text-orange-500 hover:shadow-sm";
+
+    return (
+      <Link href={route} className={activeClass}>
+        {label}
+      </Link>
+    );
+  }
+
+  if (isLandingPage) return null;
+
+  return (
+    <div className="bg-gray-200/20 dark:bg-zinc-900 flex justify-between items-center m-0 py-4 px-10">
+      <header>
+        <Link href="/home">
+          <Image
+            src={logo}
+            alt="OKC Logo"
+            width={200}
+            height="auto"
+            className="object-cover"
+            priority
+          />
+        </Link>
+      </header>
+      <nav>
+        <ul className="flex gap-12">
+          <li>{LinkHover("Home", "/home")}</li>
+          <li>{LinkHover("Bills", "/bill")}</li>
+          <li>{LinkHover("Files", "/file")}</li>
+          <li>{LinkHover("Logout", "/")}</li>
+        </ul>
+      </nav>
+    </div>
+  );
+}
