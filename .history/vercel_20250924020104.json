@@ -1,0 +1,12 @@
+{
+  "build": {
+    "env": {
+      "npm_config_optional": "false"
+    }
+  },
+  "functions": {
+    "api/*.js": {
+      "runtime": "@vercel/node@latest"
+    }
+  }
+}
