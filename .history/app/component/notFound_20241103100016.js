@@ -24,7 +24,7 @@ export default function NotFound() {
             File Not Found!
           </p>
           <p class="text-gray-600">
-            The file you&apos;re looking for could not be located in our database.
+            The file you're looking for could not be located in our database.
             Please check the details and try again.
           </p>
         </div>

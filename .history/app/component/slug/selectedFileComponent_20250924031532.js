@@ -46,7 +46,7 @@ export default function SelectedFileComponent({ currentPage }) {
           + Add Proceedings
         </button>
 
-        <Button>+Upload Documents</Button>
+        <Button children={`+Upload Documents`}></Button>
       </div>
     </div>
   );

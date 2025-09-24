@@ -22,7 +22,7 @@ export default function SideBar({ currentPage }) {
     if (!isHydrated && files.length !== 0) {
       getFileData("files");
     }
-  }, [isHydrated, files.length, getFileData]);
+  }, [isHydrated, files.length()]);
 
   // if (loading) return <div>Loading...</div>;
   if (isHydrated) return <div>Loading...</div>;

@@ -4,7 +4,6 @@ import Button from "../button";
 import useDataStore from "../store/dataStore/store";
 import Link from "next/link";
 import NotFound from "../notFound";
-import Image from "next/image";
 
 export default function SelectedFileComponent({ currentPage }) {
   const { getFileById } = useDataStore((state) => state.actions);
@@ -46,7 +45,7 @@ export default function SelectedFileComponent({ currentPage }) {
           + Add Proceedings
         </button>
 
-        <Button>+Upload Documents</Button>
+        <Button children={`+Upload Documents`}></Button>
       </div>
     </div>
   );
